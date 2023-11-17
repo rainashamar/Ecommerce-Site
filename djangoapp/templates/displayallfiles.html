@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>AUDIO NAME</th>
+        <th> AUDIO FILE</th>
+        <th>VIDEO NAME</th>
+        <th> VIDEO FILE</th>
+        <th> PDF NAME</th>
+        <th> PDF FILE</th>
+        <th>UPDATE DATA </th>
+        <th>DELETE DATA </th>
+    </tr>
+    {% for a,b,c,d,e,f,g in data %}
+    <tr>
+        <td>{{a}}</td>
+        <td>{{b}}</td>
+        <td>
+            <audio controls>
+                <source src="{% static c %}">
+            </audio>
+        </td>
+        <td>{{d}}</td>
+        <td>
+            <video width="100px" height="100px" controls>
+             <source src="{% static e %}">
+            </video>
+            </td>
+        <td>{{f}}</td>
+        <td><a href="{% static g %}">DOWNLOAD</a> </td>
+        <td><a href="http://127.0.0.1:8000/djangoapp/update_allfile/{{a}}" class="btn btn-primary">Change !!</a></td>
+        <td><a href="http://127.0.0.1:8000/djangoapp/delete_allfile/{{a}}" class="btn btn-danger">Delete !!</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

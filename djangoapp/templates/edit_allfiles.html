@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+  <table align="center">
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+      <tr>
+        <td><label>ID</label></td>
+        <td><input type="text" name="id" value=""></td>
+      </tr>
+        <tr>
+        <td><label>Audio Name</label></td>
+        <td><input type="text" name="audio_name" value=""></td>
+      </tr>
+        <tr>
+        <td><label>Audio File</label></td>
+        <td><input type="text" name="audio_file" value=""></td>
+      </tr>
+        <tr>
+        <td><label>Video Name</label></td>
+        <td><input type="text" name="video_name" value=""></td>
+      </tr>
+        <tr>
+        <td><label>Video File</label></td>
+        <td><input type="text" name="video_file" value=""></td>
+      </tr>
+        <tr>
+        <td><label>Pdf Name</label></td>
+        <td><input type="text" name="pdf_name" value=""></td>
+      </tr>
+        <tr>
+        <td><label>Pdf File</label></td>
+        <td><input type="text" name="pdf_file" value=""></td>
+      </tr>
+
+    </form>
+  </table>
+</center>
+
+</body>
+</html>

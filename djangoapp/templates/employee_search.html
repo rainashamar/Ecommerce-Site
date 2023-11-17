@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <style>
+     body{
+        background-image:url({% static 'b1.jpg' %})
+
+        }
+        #s1{
+        margin-top:100px
+        margin-left:100px
+        background-color:red;
+        }
+  </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="s1">
+  <br><br>
+    <form method="post">{% csrf_token %}
+   <input type="text" class="form-control" name="empname" placeholder="Enter Employee Name"><br><br><br>
+  <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number"><br><br><br>
+        <input type="submit"  value="Search Employee">
+        </form>
+
+</div>
+
+</body>
+</html>

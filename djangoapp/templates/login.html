@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+        background: rgb(140,39,83);
+background: radial-gradient(circle, rgba(140,39,83,1) 5%, rgba(148,187,233,1) 90%);
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br><br><br><br><br><br><br><br><br><br>
+<form method="post">{% csrf_token %}
+<center>
+    <input type="text" name="username" placeholder="Enter UserName"><br><br>
+    <input type="text" name="pwd" placeholder="Enter Password"><br><br>
+    <input type="submit" value="  Login "><br><br>
+</center>
+    </form>
+</body>
+</html>

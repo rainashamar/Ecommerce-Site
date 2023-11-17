@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body{
+    background-color: #ffd53c;
+background-image: linear-gradient(225deg, #ffd53c 0%, #644ba0 50%, #2b3fc5 100%);
+
+
+    }
+        #a1{
+        background-color: #FAACA8;
+background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+        float:right;
+        width:450px;
+        height:300px;
+        margin-top:50px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <br><br>
+    <center><b><h1>File upload</h1></b></center>
+    <div id="a1">
+        Audio Name<br><br>
+        <input type="text" id="q2" name="audio_name" placeholder="Enter Audio Name."><br><br>
+        Audio File<br><br>
+        <input type="file" id="q1" name="audio_file" placeholder="Upload Audio File .."><br><br>
+       Video Name<br><br>
+        <input type="text" id="q2" name="video_name" placeholder="EnterVideo Name."><br><br>
+        Audio File<br><br>
+        <input type="file" id="q1" name="video_file" placeholder="Upload Video File .."><br><br>
+       PDF File Name<br><br>
+        <input type="text" id="q2" name="pdf_name" placeholder="Enter PDF Name."><br><br>
+        PDF File<br><br>
+        <input type="file" id="q1" name="pdf_file" placeholder="Upload PDF File .."><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="UPLOAD">
+
+    </div>
+
+</form>
+
+</body>
+</html>

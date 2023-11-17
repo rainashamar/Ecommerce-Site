@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="red">
+<h1 align="center"><u>Django</u></h1>
+<p>Django is a free and open-source, Python-based web framework that follows the model–template–views architectural pattern.
+It is maintained by the Django Software Foundation, an independent organization established in the US as a 501 non-profit.
+Django is a back-end server side web framework.
+Django is free, open source and written in Python.
+Django makes it easier to build web pages using Python</p>
+<img src="{% static 'nature1.jpg' %}" height="200px" width="200px">
+<!--audio-->
+<audio controls>
+            <source src="{% static 'audio_1.ogg' %}">
+</audio>
+
+<!--video-->
+  <video controls height="300px" width="300px">
+            <source src="{% static 'video1.mp4' %}">
+        </video>
+<!--pdf dwmload-->
+ <a href="{% static 'Rahiyanath.pdf' %}" download>Click To Download PDF</a>
+</body>
+</html>

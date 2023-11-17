@@ -1,0 +1,135 @@
+1.
+ORM stands for Object Relational Mapping.It is used to Interact with relational database in simpler manner.
+it allows to add modify delete and a query Object
+
+2.Django follows MVT Architecture(model view template)
+MVT is a s/w design patterm which includes 3 impotant patterns
+model view and tenmplate
+Model:data access layer and handle database
+View:which is used to execute the logic and interact with data and render template
+Template: userinterface part compltely
+
+
+
+3.
+A Project Which includes Whole web application.while an app is Sub module of project.
+
+4.
+Django have automatic Admin interface.it reads metadata from models to provide an interface .
+superadmin is django admin interface
+steps
+python manage.py create superadmin (to create super admin)
+
+5.Context in django is tha data passed to the rendering file
+
+6.
+to import render and redirect
+from django.shortcuts import render,redirect
+To import Http response
+from django.http import HttpResponse
+
+7.to implement an external database  connection  in Django we use mysql
+
+8.
+Django is a free and open source web application framework for fast and effective dyamnic web development application
+Django frmawork commonly used for python
+Django is used both frontend and backend application .for front end design we use html templates
+
+9.
+An exception is an abnormal event that leads to program failure.
+
+
+10.
+in function based view we use request method and easy to understand for beginers
+
+
+
+Class based id easy to implement and leass code all are inbult function
+
+
+11.
+Generic is django inbulit view parent class
+they are advanced set of bulit in view thar are used to implement.
+using class based view we can easily habdle the get post request for a view
+Classes Provided by Generic:
+1.Create View:
+it is a view that is used to create and instance or object.
+2.List View:
+it is a view that is used to list
+3.Update View:
+It is a view that is used for editing an existing object and save change
+4.Delete View:
+it is a view that is used to delete an object
+5.Detail View:
+it is a view that is used to get single instance
+
+
+12.
+Class Meta is usually aa inner class which is used to provide metadata to the model form or class
+it is used to change the behavioir of existing form
+in forms.py
+class classnm(forms.ModelForm):
+    class Meta:
+        model=modelname
+        fields='__all__'
+
+13.
+auto_now_add in Django is model field argument to set current date to model field
+created_at = models.DateField(auto_now_add=True)
+
+14.
+Request.session is a session variable object to get particle login person id and save .
+request.session['id']=id
+
+15.
+get()
+which is used to retrieve data from database
+POST()
+it is used to input data to dtabase
+login register use post()
+get_quesryset()
+which is used by listview.it detmines list of objects that you want to display
+
+16
+class examclass(models.Model):
+    username=models.CharField(max_length=20)
+    email=models.EmailField()
+    dob=models.DateField(auto_now_add=True)
+    password = models.CharField(max_length=20)
+
+
+
+17.	Write models, forms ,html and class based view for register authenticated users in Django ?
+forms
+class Auth_user(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email', 'password']
+
+html
+<html>
+<body>
+<form method="post" >{% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+<input type="submit">
+</form>
+</body>
+</html>
+
+views.
+class Auth_register(generic.CreateView):
+    form_class = Auth_user
+    template_name = 'Auth_register.html'
+    success_url = reverse_lazy('Authlogin')
+
+
+url
+urlpatterns[
+path('AuthRegister/',Auth_register.as_view(),name='Authregister'),
+]
+
+
+
+

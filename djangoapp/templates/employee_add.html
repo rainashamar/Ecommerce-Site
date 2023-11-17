@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+         body{
+        background-image:url({% static 'emp.jpg' %})
+        }
+        #a1{
+        margin-top:150px;
+        margin-left:100px;
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="a1">
+    <center><h1><b>EMPLOYEE DETAILS</b></h1></center>
+    <form method="post">{% csrf_token %}
+        Employee Name<br>
+      <input type="text" class="form-control" name="empname" placeholder="Enter Employee Name"><br><br><br>
+        Email Id<br>
+        <input type="text" class="form-control" name="email" placeholder="Enter Email"><br><br><br>
+        Company  Name<br>
+         <input type="text" class="form-control" name="cmpny_name" placeholder="Enter Company Name"><br><br><br>
+        Designation<br>
+         <input type="text" class="form-control" name="desig" placeholder="Enter Designation"><br><br><br>
+        Phone Number<br>
+         <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number"><br><br><br>
+        <input type="submit" id="s1" value="ADD DETAILS">
+    </form>
+
+</div>
+
+</body>
+</html>
